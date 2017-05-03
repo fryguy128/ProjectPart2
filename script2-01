@@ -1,0 +1,3 @@
+#! /bin/bash
+
+./script1-01 ${@} | sort -g -k 4

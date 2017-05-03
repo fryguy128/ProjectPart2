@@ -11,6 +11,8 @@ for i in fileinput.input():
     sum += numbers[x]
     x+= 1
 avg = sum/x
+sum = 0
 for i in numbers:
-    sum = (i-avg)*(i-avg)
-print math.sqrt(sum)
+    sum += (i-avg)*(i-avg)
+newavg = sum/x
+print math.sqrt(newavg)
