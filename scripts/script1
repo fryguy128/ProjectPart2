@@ -1,0 +1,13 @@
+#! /bin/bash
+for i in ${@}
+do
+	echo -n $i
+	echo -n "    "
+	echo -n $(awk '{print $2}' | scripts/avg.py)
+	echo -n "    "
+	echo -n $(awk '{print $3}' | scripts/avg.py)
+	echo -n "    "
+	echo -n $(awk '{print $2}' | scripts/stddev.py)
+	echo -n "    "
+	echo $(awk '{print $3}' | scripts/stddev.py)
+done

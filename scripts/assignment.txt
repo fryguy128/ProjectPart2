@@ -1,0 +1,4 @@
+Script 1: Filename, average x, average y, stdev x, stdev y
+Script 2: Script 1 sorted by x
+Script 3: Script 1 sorted by y
+Script 4: Total deviation
