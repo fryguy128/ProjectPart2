@@ -1,0 +1,28 @@
+#! /bin/bash
+#This script creates a LaTex file that is then parsed into a pdf
+cat texDocP1 > ProjectPart3.tex
+cd ../
+
+echo "\begin{table}[h]" >> LaTex/ProjectPart3.tex
+./script4-01 data-201745135111.txt data-20174513521.txt data-201745135246.txt data-201745135328.txt data-201745135431.txt | sort -k 6 -n | LaTex/tsv2table.py >> LaTex/ProjectPart3.tex
+echo "\caption{A table of the results from the short distance experiment for the first second}" >> LaTex/ProjectPart3.tex
+echo "\end{table}" >> LaTex/ProjectPart3.tex
+
+echo "\begin{table}[h]" >> LaTex/ProjectPart3.tex
+./script4-01  data-201745135616.txt  data-201745135944.txt data-201745135851.txt data-20174513581.txt data-20174513577.txt | sort -k 6 -n | LaTex/tsv2table.py >> LaTex/ProjectPart3.tex
+echo "\caption{A table of the results from the long distance experiment for the first second}" >> LaTex/ProjectPart3.tex
+echo "\end{table}" >> LaTex/ProjectPart3.tex
+
+echo "\begin{table}[h]" >> LaTex/ProjectPart3.tex
+./script4-10 data-201745135111.txt data-20174513521.txt data-201745135246.txt data-201745135328.txt data-201745135431.txt | sort -k 6 -n | LaTex/tsv2table.py >> LaTex/ProjectPart3.tex
+echo "\caption{A table of the results from the short distance experiment for the first ten seconds}" >> LaTex/ProjectPart3.tex
+echo "\end{table}" >> LaTex/ProjectPart3.tex
+
+echo "\begin{table}[h]" >> LaTex/ProjectPart3.tex
+./script4-10  data-201745135616.txt  data-201745135944.txt data-201745135851.txt data-20174513581.txt data-20174513577.txt | sort -k 6 -n | LaTex/tsv2table.py >> LaTex/ProjectPart3.tex
+echo "\caption{A table of the results from the long distance experiment for the ten seconds}" >> LaTex/ProjectPart3.tex
+echo "\end{table}" >> LaTex/ProjectPart3.tex
+
+cd LaTex
+echo "\end{document}" >> ProjectPart3.tex
+pdflatex ProjectPart3.tex

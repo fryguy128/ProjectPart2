@@ -1,15 +1,16 @@
 #! /bin/bash
-echo "Filename		AverageX	AverageY	stddevX		stddevY"
+echo "Filename AverageX AverageY stddevX stddevY TotalDev"
 for i in ${@}
 do
 	x=$(python -c "print $(awk '{print $1}' $i | tail -n +2 | head -n 1)+10000")
 	echo -n $i
-	echo -n "	"
+	echo -n " "
 	echo -n $(awk -v max=$x '{if ($1 < max) print $2}' $i | tail -n +2 | scripts/avg.py)
-	echo -n "	"
+	echo -n " "
 	echo -n $(awk -v max=$x '{if ($1 < max) print $3}' $i | tail -n +2 |  scripts/avg.py)	
-	echo -n "	"
+	echo -n " "
 	echo -n $(awk -v max=$x '{if ($1 < max) print $2}' $i | tail -n +2 | scripts/stddev.py)
-	echo -n "	"
+	echo -n " "
 	echo $(awk -v max=$x '{if ($1 < max) print $3}' $i | tail -n +2 | scripts/stddev.py)
+	
 done
