@@ -4,6 +4,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\graphicspath{{./}}
 \usepackage[margin=1in]{geometry}
 \author{Patrick Duensing}
 \title{Steady Hand Project}
@@ -19,3 +20,4 @@
 \section{Procedure}
 	First a series of data was collected using the MotionLogger device and a green laser. Each student took their turn at a short distance then a long distance. The first step was to get into position at the set point. For the short distance, this was behind the second set of tables in the classroom. For the second set the student was standing behind the last set of desks. After getting into position, the student would aim the laser in the specified area on the whiteboard which had previously been drawn. After doing this they would turn on the laser and try to keep it as steady as possible for just over 10 seconds. After recording the data, Dr. Clark distributed the data via the class website to all the students to analyze using various linux programs.
 \section{Results}
+	The results show that the standard deviation ranged significantly for the group. The quantatative results of the experiment can be seen in tables \ref{tab:1secshort}, \ref{tab:10secshort}, \ref{tab:1seclong}, and \ref{tab:10seclong}. Further information about the distribution of points can be seen in the histogram in figure \ref{fig:hist}.

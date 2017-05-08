@@ -1,0 +1,6 @@
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{histogram.png}
+\caption{Graph of the distances of all points within ten seconds from the mean}
+\end{figure}
+
