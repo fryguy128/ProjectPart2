@@ -23,15 +23,21 @@ echo "\begin{table}[h]" >> LaTex/ProjectPart3.tex
 echo "\caption{\label{tab:10seclong}A table of the results from the long distance experiment for the ten seconds}" >> LaTex/ProjectPart3.tex
 echo "\end{table}" >> LaTex/ProjectPart3.tex
 
-./histDist data*.txt > histData.txt
-gnuplot 'hist.gnuplot'
-
+./histDist data*.txt
+./plotHist *.hist
+rm *.hist
 cd LaTex
+
+for i in *.png
+do
 echo "\begin{figure}[h]" >> ProjectPart3.tex
 echo "\centering" >> ProjectPart3.tex
-echo "\includegraphics[scale=1]{histogram}" >> ProjectPart3.tex
-echo "\caption{\label{fig:hist}Graph of the distances of all points within ten seconds from the mean}" >> ProjectPart3.tex
+x=${i%.*}
+x=${x%.*}
+echo "\includegraphics[scale=0.5]{$x.png}" >> ProjectPart3.tex
+echo "\caption{\label{fig:$i}Graph of the distances of all points within ten seconds from the mean in $x}" >> ProjectPart3.tex
 echo "\end{figure}" >> ProjectPart3.tex
+done
 
 echo "\end{document}" >> ProjectPart3.tex
 pdflatex ProjectPart3.tex

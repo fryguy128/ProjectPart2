@@ -1,0 +1,13 @@
+#! /bin/bash
+for i in ${@}
+do
+	x=${i%.*}
+	x=${x%.*}
+	echo "set term png" > hist.gnuplot
+	echo "set output 'LaTex/$x.png'" >> hist.gnuplot
+	echo "set xlabel 'Distance from mean'" >> hist.gnuplot
+	echo "set ylabel 'Hits at Distance'" >> hist.gnuplot
+	echo "set title 'Histogram of distances from mean in $x.txt'" >> hist.gnuplot
+	echo "plot '$i' title ''" >> hist.gnuplot
+	gnuplot 'hist.gnuplot'
+done

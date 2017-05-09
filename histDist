@@ -5,5 +5,5 @@ do
 	xavg=$(awk -v max=$x '{if ($1 < max) print $2}' $i | tail -n +2 | scripts/avg.py)
         yavg=$(awk -v max=$x '{if ($1 < max) print $3}' $i | tail -n +2 | scripts/avg.py)
 	avg=$(python -c "print ($(echo "$xavg") + $(echo "$yavg"))/2")
-	awk -v max=$x -v average=$avg '{if ($1 < max) print (($2+$3)/2)-average}' $i | tail -n +2 | scripts/hist
+	awk -v max=$x -v average=$avg '{if ($1 < max) print (($2+$3)/2)-average}' $i | tail -n +2 | scripts/hist > $i.hist
 done
