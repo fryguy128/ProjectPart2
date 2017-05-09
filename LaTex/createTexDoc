@@ -42,3 +42,6 @@ done
 echo "\end{document}" >> ProjectPart3.tex
 pdflatex ProjectPart3.tex
 pdflatex ProjectPart3.tex
+
+rm *.png
+
